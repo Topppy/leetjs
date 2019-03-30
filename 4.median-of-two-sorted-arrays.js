@@ -38,7 +38,8 @@
  * 
  */
 /**
- * 思路：
+ * 思路1：归并排序
+ * 时间复杂度：O(m+n)
  * 要求m+n复杂度肯定不能嵌套for循环
  * 需要将两个数组重新排序
  * 然后取中值
@@ -48,25 +49,34 @@
  * @param {number[]} nums2
  * @return {number}
  */
+// var findMedianSortedArrays = function(nums1, nums2) {
+//     const arr = []
+//     while(nums1.length || nums2.length){
+//       const temp1 = nums1.length ? nums1[0] : Infinity
+//       const temp2 = nums2.length ? nums2[0] : Infinity
+//       if (temp1 < temp2) {
+//         arr.push(temp1)
+//         nums1.shift()
+//       } else {
+//         arr.push(temp2)
+//         nums2.shift()
+//       }
+//     }
+//     if (arr.length % 2) {
+//       return arr[(arr.length-1)/2]
+//     } else {
+//       return (arr[arr.length/2-1] +  arr[(arr.length/2)])/2
+//     }
+// };
+
+
+// 思路2：二分查找
+// 复杂度： O(logn)
+// 找到两个数组中第（m+n）/2大的数， 先去把第215题做了。
+
 var findMedianSortedArrays = function(nums1, nums2) {
-    const arr = []
-    while(nums1.length || nums2.length){
-      const temp1 = nums1.length ? nums1[0] : Infinity
-      const temp2 = nums2.length ? nums2[0] : Infinity
-      if (temp1 < temp2) {
-        arr.push(temp1)
-        nums1.shift()
-      } else {
-        arr.push(temp2)
-        nums2.shift()
-      }
-    }
-    if (arr.length % 2) {
-      return arr[(arr.length-1)/2]
-    } else {
-      return (arr[arr.length/2-1] +  arr[(arr.length/2)])/2
-    }
+  
 };
 
+// testcase
 // findMedianSortedArrays([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],[0,6])
-
