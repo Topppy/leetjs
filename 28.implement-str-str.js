@@ -59,7 +59,7 @@ var strStr = function(haystack, needle) {
           break
         }
       }
-      ans = equal ? i : -1
+      if (equal) return i
     }
   }
   return ans
