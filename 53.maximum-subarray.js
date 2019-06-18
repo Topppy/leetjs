@@ -1,0 +1,24 @@
+/*
+ * @lc app=leetcode id=53 lang=javascript
+ *
+ * [53] Maximum Subarray
+ */
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+  if (!nums.length) return 0;
+  let maxSum = Number.MIN_SAFE_INTEGER;
+  let sum = 0
+  for (let i = 0; i < nums.length; i++) {
+    sum+=nums[i]
+    if (sum > maxSum) {
+      maxSum = sum
+    }
+    if (sum < 0) {
+      sum = 0
+    }
+  }
+  return maxSum
+};
