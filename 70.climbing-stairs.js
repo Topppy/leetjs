@@ -23,5 +23,4 @@ var climbStairs = function(n) {
 
 };
 
-climbStairs(3)
 
