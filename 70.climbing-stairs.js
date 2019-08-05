@@ -12,14 +12,10 @@
  */
 var climbStairs = function(n) {
     const re = [0, 1, 2]
-    const calc = (x) => {
-        if (x <=2) return re[x]
-        if (typeof re[x] === 'undefined') {
-            re[x] = calc(x-1) +calc(x-2)
-        }
-        return re[x]
+    for (let i=3;i<=n;i++){
+        re[i] = re[i-1] + re[i-2]
     }
-    return calc(n)
+    return re[n]
 
 };
 
