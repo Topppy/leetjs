@@ -3,6 +3,9 @@
  *
  * [70] Climbing Stairs
  */
+
+// cs(n) = cs(n-1) + cs(n-2)
+// cs(1) = cs(2) = 1
 /**
  * @param {number} n
  * @return {number}
