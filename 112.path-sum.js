@@ -18,6 +18,7 @@
  * @return {boolean}
  * 终止条件：空节点：false，是叶子节点 && val === 差
  * 继续递归：left 差， right 差
+ * 
  */
 var hasPathSum = function(root, sum) {
     if (!root) return false
